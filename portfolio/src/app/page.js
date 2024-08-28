@@ -5,7 +5,8 @@ import Welcome from './components/welcome';
 import WhoIAm from './components/who_i_am';
 import Projects from './components/projects';
 import Skills from './components/tech_and_skills';
-import AnimDiv from './components/AnimDiv';
+import Contact from './components/contact_me';
+import AnimDiv from './components/anim_div';
 
 export default function Home() {
 	return (
@@ -18,6 +19,8 @@ export default function Home() {
 			<Projects />
 			<AnimDiv delay={0} />
 			<Skills />
+			<AnimDiv delay={0} />
+			<Contact />
 		</>
 	);
 }
