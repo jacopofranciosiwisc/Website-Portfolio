@@ -1,0 +1,28 @@
+.text {
+	font-size: 2vw;
+	font-family: 'GenomeFont';
+	margin-top: 0vw;
+	color: #a3a3a3;
+}
+
+.text.hovered {
+	font-size: 2vw;
+	font-family: 'GenomeFont';
+	margin-top: 0vw;
+	color: #9ab54a;
+	cursor: pointer;
+}
+
+.arrow {
+	margin-top: 0.4vw;
+	color: #a3a3a3;
+}
+
+.arrow.hovered {
+	margin-top: 0.4vw;
+	color: #9ab54a;
+}
+
+.container {
+	position: relative;
+}
