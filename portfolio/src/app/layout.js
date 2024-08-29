@@ -1,4 +1,5 @@
 import './globals.css';
+import { ThemeProvider } from 'next-themes';
 
 export const metadata = {
 	title: 'Website Portfolio',
@@ -8,7 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
-			<body>{children}</body>
+			<body>
+				<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+					{children}
+				</ThemeProvider>
+			</body>
 		</html>
 	);
 }

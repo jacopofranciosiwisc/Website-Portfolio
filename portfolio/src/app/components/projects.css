@@ -2,25 +2,25 @@
 	font-size: 2vw;
 	font-family: 'GenomeFont';
 	margin-top: 0vw;
-	color: #a3a3a3;
+	color: #ecdfcc;
 }
 
 .text.hovered {
 	font-size: 2vw;
 	font-family: 'GenomeFont';
 	margin-top: 0vw;
-	color: #9ab54a;
+	color: #1e201e;
 	cursor: pointer;
 }
 
 .arrow {
 	margin-top: 0.4vw;
-	color: #a3a3a3;
+	color: #ecdfcc;
 }
 
 .arrow.hovered {
 	margin-top: 0.4vw;
-	color: #9ab54a;
+	color: #1e201e;
 }
 
 .container {

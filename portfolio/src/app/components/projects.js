@@ -22,7 +22,7 @@ const Projects = () => {
 		<Card
 			sx={{
 				color: '#ecdfcc',
-				backgroundColor: '#1E201E',
+				backgroundColor: '#3C3D37',
 				border: '1px solid #ecdfcc',
 				borderRadius: 10,
 				margin: 0,

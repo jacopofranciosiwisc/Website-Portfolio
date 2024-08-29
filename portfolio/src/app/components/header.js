@@ -1,8 +1,12 @@
-import { Grid, Stack } from '@mui/material';
+import { Grid, Stack, Link } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import ThemeSwitcher from './theme_switcher';
 const Header = () => {
+	icon: {
+		backgroundColor: 'white';
+	}
+
 	return (
 		<>
 			<Stack
@@ -13,13 +17,25 @@ const Header = () => {
 			>
 				<Stack direction='row' xs={2} spacing={2}>
 					<Grid item xs={4}>
-						<LinkedInIcon />
+						<a
+							href='https://www.linkedin.com/in/jacopofranciosi'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<LinkedInIcon style={{ color: '#ecdfcc' }} />
+						</a>
 					</Grid>
 					<Grid item xs={4}>
-						<GitHubIcon />
+						<a
+							href='https://github.com/jacopofranciosiwisc'
+							target='_blank'
+							rel='noopener noreferrer'
+						>
+							<GitHubIcon style={{ color: '#ecdfcc' }} />
+						</a>
 					</Grid>
 					<Grid item xs={4}>
-						<DarkModeOutlinedIcon />
+						<ThemeSwitcher />
 					</Grid>
 				</Stack>
 				<Grid item xs={2}>

@@ -1,12 +1,33 @@
 @import url('./fonts/fonts.css');
 
 html {
-	background-color: #181c14;
 	font-family: 'GenomeFont', 'Helvetica Neue', Arial, sans-serif;
+	--background-color-dark: #181c14;
+	--card-background-dark: #3c3d37;
+	--div-background-dark: #697565;
+	--text-color-dark: #ecdfcc;
+	--background-color-light: #ecdfcc;
+	--card-background-light: #697565;
+	--div-background-light: #1e201e;
+	--text-color-light: #181c14;
 }
 
 body {
-	color: #ecdfcc;
-	font-family: 'GenomeFont', 'Helvetica Neue', Arial, sans-serif;
-	/* overflow: hidden; */
+	background-color: var(--background-color-dark);
+	color: var(--text-color-dark);
+	transition: background-color-dark 0.3s ease, color 0.3s ease;
+}
+
+[data-theme='dark'] {
+	--background-color: var(--background-color-dark);
+	--card-background: var(--card-background-dark);
+	--div-background: var(--div-background-dark);
+	--text-color: var(--text-color-dark);
+}
+
+[data-theme='light'] {
+	--background-color: var(--background-color-light);
+	--card-background: var(--card-background-light);
+	--div-background: var(--div-background-light);
+	--text-color: var(--text-color-light);
 }
