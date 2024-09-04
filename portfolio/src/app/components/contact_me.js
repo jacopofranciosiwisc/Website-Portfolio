@@ -18,7 +18,7 @@ const ContactMe = () => {
 				Contact Me
 			</Grid>
 			<Grid item lg={12}>
-				Let's connect.
+				{`Let's connect.`}
 			</Grid>
 			<Grid item container marginTop='10vw'>
 				<Grid item lg={6} style={{ fontSize: '1.2rem' }}>
