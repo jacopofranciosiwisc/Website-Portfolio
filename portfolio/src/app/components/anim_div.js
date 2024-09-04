@@ -9,7 +9,8 @@ const AnimDiv = (props) => {
 		>
 			<div
 				style={{
-					borderTop: '0.5px solid #697565',
+					// borderTop: '0.5px solid #697565',
+					borderTop: '0.5px solid',
 					width: '70%',
 					margin: '5vw auto',
 				}}

@@ -1,5 +1,6 @@
+import ContextProviders from './context';
+import { CssBaseline } from '@mui/material';
 import './globals.css';
-import { ThemeProvider } from 'next-themes';
 
 export const metadata = {
 	title: 'Website Portfolio',
@@ -10,9 +11,9 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang='en'>
 			<body>
-				<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-					{children}
-				</ThemeProvider>
+				<ContextProviders>
+					<CssBaseline>{children}</CssBaseline>
+				</ContextProviders>
 			</body>
 		</html>
 	);

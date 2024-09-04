@@ -5,8 +5,18 @@ import Java from '../data/svgs/java.svg';
 import MySQL from '../data/svgs/mysql.svg';
 import Git from '../data/svgs/git.svg';
 import Python from '../data/svgs/python.svg';
+import ReactLight from '../data/svgs/react_light.svg';
+import JSLight from '../data/svgs/js_light.svg';
+import JavaLight from '../data/svgs/java_light.svg';
+import MySQLLight from '../data/svgs/mysql_light.svg';
+import GitLight from '../data/svgs/git_light.svg';
+import PythonLight from '../data/svgs/python_light.svg';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/theme_context';
 
 const Svgs = () => {
+	const { mode } = useContext(ThemeContext);
+
 	return (
 		<>
 			<Grid container spacing={10}>
@@ -18,7 +28,11 @@ const Svgs = () => {
 						alignItems='center'
 					>
 						<Grid item>
-							<React width='100' height='100' />
+							{mode ? (
+								<React width='100' height='100' />
+							) : (
+								<ReactLight width='100' height='100' />
+							)}
 						</Grid>
 						<Grid item>React</Grid>
 					</Grid>
@@ -31,7 +45,11 @@ const Svgs = () => {
 						alignItems='center'
 					>
 						<Grid item>
-							<JS width='100' height='100' />
+							{mode ? (
+								<JS width='100' height='100' />
+							) : (
+								<JSLight width='100' height='100' />
+							)}
 						</Grid>
 						<Grid item>JavaScript</Grid>
 					</Grid>
@@ -44,7 +62,11 @@ const Svgs = () => {
 						alignItems='center'
 					>
 						<Grid item>
-							<Python width='100' height='100' />
+							{mode ? (
+								<Python width='100' height='100' />
+							) : (
+								<PythonLight width='100' height='100' />
+							)}
 						</Grid>
 						<Grid item>Python</Grid>
 					</Grid>
@@ -57,7 +79,11 @@ const Svgs = () => {
 						alignItems='center'
 					>
 						<Grid item>
-							<MySQL width='100' height='100' />
+							{mode ? (
+								<MySQL width='100' height='100' />
+							) : (
+								<MySQLLight width='100' height='100' />
+							)}
 						</Grid>
 						<Grid item>MySQL</Grid>
 					</Grid>
@@ -70,7 +96,11 @@ const Svgs = () => {
 						alignItems='center'
 					>
 						<Grid item>
-							<Java width='100' height='100' />
+							{mode ? (
+								<Java width='100' height='100' />
+							) : (
+								<JavaLight width='100' height='100' />
+							)}
 						</Grid>
 						<Grid item>Java</Grid>
 					</Grid>
@@ -83,7 +113,11 @@ const Svgs = () => {
 						alignItems='center'
 					>
 						<Grid item>
-							<Git width='100' height='100' />
+							{mode ? (
+								<Git width='100' height='100' />
+							) : (
+								<GitLight width='100' height='100' />
+							)}
 						</Grid>
 						<Grid item>Git</Grid>
 					</Grid>

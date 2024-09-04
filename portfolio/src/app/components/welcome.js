@@ -18,10 +18,8 @@ const Welcome = () => {
 
 	useEffect(() => {
 		if (isDone) {
-			// Enable scrolling once typing is done
 			document.body.style.overflow = 'auto';
 		} else {
-			// Disable scrolling while typing
 			document.body.style.overflow = 'hidden';
 		}
 	}, [isDone]);
@@ -48,7 +46,10 @@ const Welcome = () => {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ delay: 0.15 }}
-						style={{ fontSize: '3rem', fontFamily: 'Helvetica Neue' }}
+						style={{
+							fontSize: '3rem',
+							fontFamily: 'Helvetica Neue',
+						}}
 					>
 						{'JACOPO FRANCIOSI'}
 					</motion.div>

@@ -1,11 +1,14 @@
-import { Grid, Stack, Link } from '@mui/material';
+'use client';
+import { Grid, Stack, useTheme } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import ThemeSwitcher from './theme_switcher';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/theme_context';
+
 const Header = () => {
-	icon: {
-		backgroundColor: 'white';
-	}
+	const { setMode, mode } = useContext(ThemeContext);
+	const iconColor = !mode ? '#181c14' : '#ecdfcc'; // Define colors based on the theme
 
 	return (
 		<>
@@ -22,7 +25,7 @@ const Header = () => {
 							target='_blank'
 							rel='noopener noreferrer'
 						>
-							<LinkedInIcon style={{ color: '#ecdfcc' }} />
+							<LinkedInIcon style={{ color: iconColor }} />
 						</a>
 					</Grid>
 					<Grid item xs={4}>
@@ -31,11 +34,31 @@ const Header = () => {
 							target='_blank'
 							rel='noopener noreferrer'
 						>
-							<GitHubIcon style={{ color: '#ecdfcc' }} />
+							<GitHubIcon style={{ color: iconColor }} />
 						</a>
 					</Grid>
 					<Grid item xs={4}>
-						<ThemeSwitcher />
+						{/* <Button
+							onClick={() => {
+								if (mode) {
+									setMode(false);
+								} else {
+									setMode(true);
+								}
+							}}
+						>
+							{mode ? <ToggleOn /> : <ToggleOff />}
+						</Button> */}
+						<DarkModeOutlinedIcon
+							onClick={() => {
+								if (mode) {
+									setMode(false);
+								} else {
+									setMode(true);
+								}
+								// console.log('setting modes');
+							}}
+						/>
 					</Grid>
 				</Stack>
 				<Grid item xs={2}>

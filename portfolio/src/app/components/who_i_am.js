@@ -14,9 +14,10 @@ const WhoIAm = () => {
 			>
 				<Card
 					sx={{
-						color: '#ecdfcc',
-						backgroundColor: '#3C3D37',
-						border: '1px solid #ecdfcc',
+						// color: '#ecdfcc',
+						// backgroundColor: '#3C3D37',
+						// border: '1px solid #ecdfcc',
+						border: '1px solid ',
 						borderRadius: 10,
 						margin: 0,
 						marginTop: '8vw',
@@ -43,6 +44,7 @@ const WhoIAm = () => {
 							<Grid item lg={6}>
 								<Image
 									src={laquila}
+									alt={`Sunset at L'Aquila, Italy`}
 									style={{
 										borderRadius: 10,
 										height: '100%',
