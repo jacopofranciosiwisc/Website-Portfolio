@@ -11,11 +11,13 @@ import AnimDiv from './components/anim_div';
 export default function Home() {
 	return (
 		<>
-			<Header />
+			<section id='home'>
+				<Header />
+			</section>
 			<main>
 				<Welcome />
 				<section id='whoiam'>
-					<AnimDiv delay={9.5} id='home' />
+					<AnimDiv delay={9.5} />
 				</section>
 				<WhoIAm />
 				<section id='projects'>
