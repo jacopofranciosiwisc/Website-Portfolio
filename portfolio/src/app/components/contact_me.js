@@ -6,7 +6,7 @@ const ContactMe = () => {
 			container
 			direction='row'
 			marginTop='8vw'
-			marginBottom='8vw'
+			marginBottom='27.5vw'
 			spacing={3}
 			textAlign='center'
 		>
@@ -20,7 +20,7 @@ const ContactMe = () => {
 			<Grid item lg={12}>
 				Let's connect.
 			</Grid>
-			<Grid item container marginTop='3vw'>
+			<Grid item container marginTop='10vw'>
 				<Grid item lg={6} style={{ fontSize: '1.2rem' }}>
 					Email:{' '}
 					<span style={{ fontFamily: 'Times New Roman' }}>

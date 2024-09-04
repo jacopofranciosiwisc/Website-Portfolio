@@ -12,15 +12,25 @@ export default function Home() {
 	return (
 		<>
 			<Header />
-			<Welcome />
-			<AnimDiv delay={9.5} />
-			<WhoIAm />
-			<AnimDiv delay={0} />
-			<Projects />
-			<AnimDiv delay={0} />
-			<Skills />
-			<AnimDiv delay={0} />
-			<Contact />
+			<main>
+				<Welcome />
+				<section id='whoiam'>
+					<AnimDiv delay={9.5} id='home' />
+				</section>
+				<WhoIAm />
+				<section id='projects'>
+					<AnimDiv delay={0} />
+				</section>
+				<Projects />
+				<section id='techandskills'>
+					<AnimDiv delay={0} />
+				</section>
+				<Skills />
+				<section id='contactme'>
+					<AnimDiv delay={0} />
+				</section>
+				<Contact />
+			</main>
 		</>
 	);
 }
