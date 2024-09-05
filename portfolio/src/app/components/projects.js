@@ -80,6 +80,7 @@ const Projects = () => {
 							setIsHovered(false);
 							handleMouseLeave();
 						}}
+						onClick={() => alert('This is currently being implemented!')}
 					>
 						Get inspired
 					</Grid>
