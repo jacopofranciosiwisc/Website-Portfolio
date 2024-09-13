@@ -1,12 +1,19 @@
 const nextConfig = {
-	webpack(config) {
+	webpack: (config, { isServer }) => {
+		// Fixes npm packages that depend on `fs` module for client-side
+		if (!isServer) {
+			config.resolve.fallback = {
+				fs: false,
+			};
+		}
+
 		// Grab the existing rule that handles SVG imports
 		const fileLoaderRule = config.module.rules.find((rule) =>
 			rule.test?.test?.('.svg')
 		);
 
+		// Apply the existing rule, but only for svg imports ending in ?url
 		config.module.rules.push(
-			// Reapply the existing rule, but only for svg imports ending in ?url
 			{
 				...fileLoaderRule,
 				test: /\.svg$/i,

@@ -2,5 +2,10 @@
 	"intro_text": "Hey, I'm a Software Developer with an emphasis on Frontend, and a passion for Machine Learning and AI. I'm dedicated to creating impactful work in the world. Explore my virtual homespace.",
 	"intro_text_1": "Hey, I'm a Software Developer with an emphasis on Frontend, and a passion for Machine Learning and AI. ",
 	"intro_text_2": "I'm dedicated to creating impactful work in the world. Explore my virtual homespace.",
-	"about_text": "When I was 7 years old, an earthquake hit my home town L'Aquila, in Abruzzo, Italy. Everything I had grown up around was gone. My family and I moved around countless times and faced hardships together, eventually moving to Chicago 8 or so years ago. Recently, I obtained my citizenship from the United States, and graduated with a double major in Computer Science and Data Science. Currently I am studying ML and AI, and restlessly learning new programming skills."
+	"about_text": "When I was 7 years old, an earthquake hit my home town L'Aquila, in Abruzzo, Italy. Everything I had grown up around was gone. My family and I moved around countless times and faced hardships together, eventually moving to Chicago 8 or so years ago. Recently, I obtained my citizenship from the United States, and graduated with a double major in Computer Science and Data Science. Currently I am studying ML and AI, and restlessly learning new programming skills.",
+	"proj_titles": {
+		"proj1": "Learn With Foster",
+		"proj2": "Effective Altruism",
+		"proj3": "Learn With Foster"
+	}
 }

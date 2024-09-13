@@ -7,6 +7,7 @@ import Projects from './components/projects';
 import Skills from './components/tech_and_skills';
 import Contact from './components/contact_me';
 import AnimDiv from './components/anim_div';
+import Subscribe from './components/subscribe';
 
 export default function Home() {
 	return (
@@ -28,6 +29,10 @@ export default function Home() {
 					<AnimDiv delay={0} />
 				</section>
 				<Skills />
+				<section id='subscribe'>
+					<AnimDiv delay={0} />
+				</section>
+				<Subscribe />
 				<section id='contactme'>
 					<AnimDiv delay={0} />
 				</section>

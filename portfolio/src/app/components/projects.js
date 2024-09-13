@@ -4,6 +4,7 @@ import { useState } from 'react';
 import './projects.css';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import gsap from 'gsap';
+import Link from 'next/link';
 
 const Projects = () => {
 	const [isHovered, setIsHovered] = useState(false);
@@ -80,9 +81,13 @@ const Projects = () => {
 							setIsHovered(false);
 							handleMouseLeave();
 						}}
-						onClick={() => alert('This is currently being implemented!')}
 					>
-						Get inspired
+						<Link
+							href='/components/projects_carousel'
+							style={{ color: 'inherit', textDecoration: 'none' }}
+						>
+							Get inspired
+						</Link>
 					</Grid>
 					<Grid
 						item

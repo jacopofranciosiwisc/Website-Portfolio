@@ -1,7 +1,36 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { TextField } from '@mui/material';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../context/theme_context';
 
 const Subscribe = () => {
+	const [email, setEmail] = useState('');
+	const { mode } = useContext(ThemeContext);
+	const darkColor = !mode ? '#1e201e' : '#ecdfcc'; // Define colors based on the theme
+	const lightColor = mode ? '#1e201e' : '#ecdfcc'; // Define colors based on the theme
+
+	const handleEmailSubmit = async () => {
+		try {
+			const res = await fetch('/api/post_user', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					userEmail: email,
+				}),
+			});
+			if (res.ok) {
+				const data = await res.json();
+				console.log('Response data:', data); // Log the data if needed
+			} else {
+				console.log('Response not ok:', res.status);
+			}
+		} catch (error) {
+			console.error('Error:', error);
+		}
+	};
+
 	const theme = createTheme({
 		palette: {
 			primary: {
@@ -16,23 +45,23 @@ const Subscribe = () => {
 				styleOverrides: {
 					root: {
 						'& .MuiInputBase-input': {
-							color: '#697565', // Default text color
+							color: darkColor, // Default text color
 						},
 						'& .MuiInputLabel-root': {
-							color: '#ecdfcc', // Default label color
+							color: darkColor, // Default label color
 						},
 						'& .MuiInputLabel-root.Mui-focused': {
-							color: '#ecdfcc', // Label color when focused
+							color: darkColor, // Label color when focused
 						},
 						'& .MuiOutlinedInput-root': {
 							'& fieldset': {
-								borderColor: '#697565', // Border color when not focused
+								borderColor: darkColor, // Border color when not focused
 							},
 							'&:hover fieldset': {
-								borderColor: '#ecdfcc', // Border color on hover
+								borderColor: darkColor, // Border color on hover
 							},
 							'&.Mui-focused fieldset': {
-								borderColor: '#ecdfcc', // Border color when focused
+								borderColor: darkColor, // Border color when focused
 							},
 						},
 					},
@@ -40,12 +69,80 @@ const Subscribe = () => {
 			},
 		},
 	});
+
 	return (
-		<>
-			<ThemeProvider theme={theme}>
-				<TextField label='Email' color='primary' />
-			</ThemeProvider>
-		</>
+		<div
+			style={{
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'center',
+				flexDirection: 'column',
+				marginTop: '8vw',
+				marginBottom: '8vw',
+			}}
+		>
+			<span
+				style={{
+					fontSize: '2.5rem',
+					fontFamily: 'Helvetica Neue',
+					marginBottom: '2rem',
+				}}
+			>
+				Subscribe to my Mail List
+			</span>
+			<span
+				style={{
+					fontSize: '1.2rem',
+					fontFamily: 'Times New Roman',
+				}}
+			>
+				Keep updated with what I'm doing!
+			</span>
+			<div
+				style={{
+					justifyContent: 'center',
+					flexDirection: 'row',
+					display: 'flex',
+					alignItems: 'center',
+					marginTop: '6vw',
+				}}
+			>
+				<span>
+					<ThemeProvider theme={theme}>
+						<TextField
+							label='Email'
+							color='primary'
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+						/>
+					</ThemeProvider>
+				</span>
+				<span style={{ marginLeft: '1rem' }}></span>
+			</div>
+			<button
+				type='submit'
+				style={{
+					borderColor: darkColor,
+					backgroundColor: lightColor,
+					color: darkColor,
+					border: `2px solid ${darkColor}`,
+					borderRadius: 30,
+					marginTop: '4vw',
+					padding: '0.5rem',
+					paddingRight: '2.5rem',
+					paddingLeft: '2.5rem',
+					fontSize: '1.2rem',
+					fontFamily: 'Helvetica Neue',
+					cursor: 'pointer',
+				}}
+				onClick={() => {
+					handleEmailSubmit();
+					setEmail('');
+				}}
+			>
+				Send
+			</button>
+		</div>
 	);
 };
 

@@ -12,7 +12,7 @@ const TechAndSkills = () => {
 				marginBottom='8vw'
 				spacing={3}
 			>
-				<Grid item style={{ fontSize: '2.5rem' }}>
+				<Grid item style={{ fontSize: '2.5rem', fontFamily: 'Helvetica Neue' }}>
 					Tech & Skills
 				</Grid>
 				<Grid item marginTop='5vw'>
