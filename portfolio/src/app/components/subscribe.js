@@ -2,14 +2,20 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { TextField } from '@mui/material';
 import { useContext, useState } from 'react';
 import { ThemeContext } from '../context/theme_context';
+import validator from 'validator';
 
 const Subscribe = () => {
 	const [email, setEmail] = useState('');
 	const { mode } = useContext(ThemeContext);
-	const darkColor = !mode ? '#1e201e' : '#ecdfcc'; // Define colors based on the theme
-	const lightColor = mode ? '#1e201e' : '#ecdfcc'; // Define colors based on the theme
+	const darkColor = !mode ? '#1e201e' : '#ecdfcc';
+	const lightColor = mode ? '#1e201e' : '#ecdfcc';
 
+	// Send email through API route POST request
 	const handleEmailSubmit = async () => {
+		if (!validator.isEmail(email)) {
+			alert('Please enter a valid email address.');
+			return;
+		}
 		try {
 			const res = await fetch('/api/post_user', {
 				method: 'POST',
@@ -22,12 +28,15 @@ const Subscribe = () => {
 			});
 			if (res.ok) {
 				const data = await res.json();
-				console.log('Response data:', data); // Log the data if needed
+				console.log('Response data:', data);
+				alert(
+					'Submission successful. Make sure to check your spam email, and mark it as non-spam so future mail is in your inbox!'
+				);
 			} else {
 				console.log('Response not ok:', res.status);
 			}
 		} catch (error) {
-			console.error('Error:', error);
+			console.error('There was an error calling the API route. Error:', error); // Shows up in the website console since it's client-side logging.
 		}
 	};
 
@@ -96,7 +105,7 @@ const Subscribe = () => {
 					fontFamily: 'Times New Roman',
 				}}
 			>
-				"Keep updated with what I'm doing!"
+				Keep updated with what I'm doing!
 			</span>
 			<div
 				style={{
