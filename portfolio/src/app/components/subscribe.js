@@ -105,7 +105,7 @@ const Subscribe = () => {
 					fontFamily: 'Times New Roman',
 				}}
 			>
-				Keep updated with what I'm doing!
+				Keep updated with what I&apos;m doing!
 			</span>
 			<div
 				style={{
