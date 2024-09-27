@@ -13,7 +13,7 @@ export default function Home() {
 	return (
 		<>
 			<section id='home'>
-				<Header delay={9.5} offset={120} />
+				<Header delay={9.5} />
 			</section>
 			<main>
 				<Welcome />
