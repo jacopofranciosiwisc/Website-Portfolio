@@ -3,17 +3,28 @@ import { Grid, Stack } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { ThemeContext } from '../context/theme_context';
 import gsap from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const Header = () => {
+const Header = (props) => {
 	const { setMode, mode } = useContext(ThemeContext);
 	const iconColor = !mode ? '#1e201e' : '#ecdfcc'; // Define colors based on the theme
 	const headerCol = !mode ? '#ecdfcc' : '#1e201e';
+	const [isDisabled, setisDisabled] = useState(true);
+
+	useEffect(() => {
+		// Start the delay timer when component mounts
+		window.scrollTo(0, 0);
+		const timer = setTimeout(() => {
+			setisDisabled(false);
+		}, props.delay * 1000);
+
+		return () => clearTimeout(timer);
+	}, [props.delay]);
 
 	const handleScrollToTop = () => {
 		gsap.to(window, {
@@ -25,13 +36,22 @@ const Header = () => {
 		});
 	};
 
+	const offsets = { techandskills: 120, contactme: 60 };
+
+	// TODO: need to change navigation offset for some elements
 	const handleNavigation = (path) => {
 		const targetElement = document.getElementById(path);
+
 		if (targetElement) {
+			let offset = 0;
+			if (targetElement.id in offsets) {
+				offset = offsets[targetElement.id];
+			}
 			gsap.to(window, {
 				duration: 1.5, // Duration in seconds
 				scrollTo: {
 					y: targetElement,
+					offsetY: offset,
 				},
 				ease: 'power2.out', // Easing function for smoothness
 			});
@@ -48,6 +68,7 @@ const Header = () => {
 				width: '100%',
 				background: headerCol, // Optional: set a background color for the header
 				zIndex: 1000, // Ensures the header stays above other content
+				pointerEvents: isDisabled ? 'none' : 'auto',
 			}}
 		>
 			<Stack
@@ -92,7 +113,7 @@ const Header = () => {
 							padding: 0,
 							font: 'inherit',
 						}}
-						onClick={() => handleScrollToTop('home')}
+						onClick={() => handleScrollToTop()}
 					>
 						Home
 					</button>
