@@ -81,13 +81,17 @@ const Projects = () => {
 							setIsHovered(false);
 							handleMouseLeave();
 						}}
+						onClick={() => {
+							alert('This feature is under maintenance');
+						}}
 					>
-						<Link
+						{/* <Link
 							href='/components/projects_carousel'
 							style={{ color: 'inherit', textDecoration: 'none' }}
 						>
 							Get inspired
-						</Link>
+						</Link> */}
+						Get inspired
 					</Grid>
 					<Grid
 						item
