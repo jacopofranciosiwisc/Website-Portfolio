@@ -36,7 +36,7 @@ const Header = (props) => {
 		});
 	};
 
-	const offsets = { techandskills: 120, contactme: 60 };
+	const offsets = { techandskills: 120, contactme: 60, subscribe: 100 };
 
 	// TODO: need to change navigation offset for some elements
 	const handleNavigation = (path) => {
@@ -161,6 +161,21 @@ const Header = (props) => {
 						onClick={() => handleNavigation('techandskills')}
 					>
 						Technologies and Skills
+					</button>
+				</Grid>
+				<Grid item xs={2}>
+					<button
+						style={{
+							background: 'none',
+							border: 'none',
+							color: 'inherit',
+							cursor: 'pointer',
+							padding: 0,
+							font: 'inherit',
+						}}
+						onClick={() => handleNavigation('subscribe')}
+					>
+						Subscribe
 					</button>
 				</Grid>
 				<Grid item xs={2}>
