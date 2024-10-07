@@ -48,7 +48,7 @@ const Header = (props) => {
 			container
 			direction='row'
 			onClick={toggleDrawer(false)}
-			style={{ backgroundColor: '#181c14', height: '40vw' }}
+			style={{ background: headerCol, height: '40vw' }}
 		>
 			{navigationItems.map((item, index) => (
 				<Grid item xs={6} key={index}>
@@ -62,7 +62,13 @@ const Header = (props) => {
 							font: 'inherit',
 							fontSize: '1rem',
 						}}
-						onClick={() => handleNavigation(item.path)}
+						onClick={() => {
+							if (item.path === 'home') {
+								handleScrollToTop();
+							} else {
+								handleNavigation(item.path);
+							}
+						}}
 					>
 						{item.text}
 					</button>
