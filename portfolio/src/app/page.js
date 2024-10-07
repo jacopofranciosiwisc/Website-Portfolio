@@ -12,7 +12,7 @@ import Subscribe from './components/subscribe';
 export default function Home() {
 	return (
 		<>
-			<section id='home'>
+			<section id='home' style={{ marginBottom: '3rem' }}>
 				<Header delay={9.5} />
 			</section>
 			<main>
