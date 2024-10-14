@@ -4,7 +4,6 @@ import { useState } from 'react';
 import './projects.css';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import gsap from 'gsap';
-import Link from 'next/link';
 
 const Projects = () => {
 	const [isHovered, setIsHovered] = useState(false);

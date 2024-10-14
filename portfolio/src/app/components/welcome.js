@@ -42,17 +42,19 @@ const Welcome = () => {
 				alignItems='center'
 			>
 				<Grid item>
-					<motion.div
+					<motion.h1
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ delay: 0.15 }}
 						style={{
 							fontSize: '3rem',
 							fontFamily: 'Helvetica Neue',
+							fontWeight: 'normal',
+							margin: '0 0',
 						}}
 					>
 						{'JACOPO FRANCIOSI'}
-					</motion.div>
+					</motion.h1>
 				</Grid>
 				<Grid item>
 					<span style={{ fontSize: '1.5rem' }}>{text}</span>

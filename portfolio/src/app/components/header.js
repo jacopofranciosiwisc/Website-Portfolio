@@ -155,6 +155,7 @@ const Header = (props) => {
 						<Button
 							onClick={toggleDrawer(true)}
 							style={{ padding: '0 0', margin: '0 0' }}
+							aria-label='Navigation Drawer'
 						>
 							<Menu style={{ color: iconColor }} />
 						</Button>
@@ -167,6 +168,7 @@ const Header = (props) => {
 							href='https://www.linkedin.com/in/jacopofranciosi'
 							target='_blank'
 							rel='noopener noreferrer'
+							aria-label='LinkedIn'
 						>
 							<LinkedInIcon style={{ color: iconColor }} />
 						</a>
@@ -176,6 +178,7 @@ const Header = (props) => {
 							href='https://github.com/jacopofranciosiwisc'
 							target='_blank'
 							rel='noopener noreferrer'
+							aria-label='GitHub'
 						>
 							<GitHubIcon style={{ color: iconColor }} />
 						</a>
@@ -214,6 +217,7 @@ const Header = (props) => {
 								href='https://www.linkedin.com/in/jacopofranciosi'
 								target='_blank'
 								rel='noopener noreferrer'
+								aria-label='LinkedIn'
 							>
 								<LinkedInIcon style={{ color: iconColor }} />
 							</a>
@@ -223,6 +227,7 @@ const Header = (props) => {
 								href='https://github.com/jacopofranciosiwisc'
 								target='_blank'
 								rel='noopener noreferrer'
+								aria-label='GitHub'
 							>
 								<GitHubIcon style={{ color: iconColor }} />
 							</a>
